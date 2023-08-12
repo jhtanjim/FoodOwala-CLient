@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+
 import useCarts from '../../../Hooks/useCarts';
 
 const Header = () => {
@@ -48,7 +50,7 @@ console.log(cart?.length);
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">FoowOwala</a>
+                    <a className="btn btn-ghost normal-case text-xl">KhabarDokan</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -56,8 +58,21 @@ console.log(cart?.length);
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
+                {user && (
+                        <OverlayTrigger
+                            placement="bottom"
+                            overlay={<Tooltip id="tooltip">{user.displayName}</Tooltip>}
+                        >
+                            <div style={{ position: 'relative', zIndex: '9999' }}>
+                                <img
+                                    className="rounded-full mr-5"
+                                    src={user.photoURL}
+                                    alt="Profile Picture"
+                                    style={{ width: '60px', height: '60px' }}
+                                />
+                            </div>
+                        </OverlayTrigger>
+                    )}                </div>
             </div>
         </>
     );

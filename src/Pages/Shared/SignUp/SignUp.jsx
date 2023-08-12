@@ -26,16 +26,12 @@ const SignUp = () => {
         // console.log(data)
         createUser(data.email, data.password)
             .then(result => {
-
                 const loggedUser = result.user
                 console.log(loggedUser);
-
                 updateUserProfile(data.name, data.photoURL)
-
-
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email }
-                        fetch('https://bistro-boss-server-jhtanjim.vercel.app/users', {
+                        fetch('http://localhost:5000/users', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'
@@ -53,11 +49,13 @@ const SignUp = () => {
                                         showConfirmButton: false,
                                         timer: 1500
                                     })
-
                                     navigate('/')
-
                                 }
                             })
+
+
+
+
                     }).catch((error) => {
                         console.log(error);
                     });

@@ -49,11 +49,11 @@ const MyCart = () => {
 
         <div className='w-full max-w-6xl my-16 '>
           
-<h3 className='lg:text-4xl uppercase border-y-4  lg:py-4 text-center my-12 font-bold'>My  <span className='text-yellow-500'>Cart</span></h3>
+<h3 className='lg:text-4xl uppercase border-y-4  lg:py-4 text-center mb-12 font-bold'>My  <span className='text-yellow-500'>Cart</span></h3>
 
             <div className='uppercase h-[60px] mb-4 align-items-center font-semibold flex justify-evenly'>
-                <h3 className="text-3xl">Total Items : {cart.length}</h3>
-                <h3 className="text-3xl">Total Price : {total}</h3>
+                <h3 className="lg:text-3xl">Total Items : {cart.length}</h3>
+                <h3 className="lg:text-3xl">Total Price : {total}</h3>
                 <button className="btn btn-warning  btn-sm">Pay</button>
 
             </div>
