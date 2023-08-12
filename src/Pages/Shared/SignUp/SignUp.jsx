@@ -30,7 +30,6 @@ const SignUp = () => {
                 const loggedUser = result.user
                 console.log(loggedUser);
 
-
                 updateUserProfile(data.name, data.photoURL)
 
 
@@ -57,13 +56,8 @@ const SignUp = () => {
 
                                     navigate('/')
 
-
                                 }
                             })
-
-
-
-
                     }).catch((error) => {
                         console.log(error);
                     });

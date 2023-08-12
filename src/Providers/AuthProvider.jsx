@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
 
     // google signIn
     const googleSignIn = () => {
-        setLoading(true)
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
@@ -33,12 +33,10 @@ const AuthProvider = ({ children }) => {
 
     }
     // logout/signout
-
     const logout = () => {
         setLoading(true)
         return signOut(auth)
     }
-
     // updateprofile
     const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
@@ -53,10 +51,8 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser)
             console.log('current user', currentUser);
             // get and set token
-
             setLoading(false);
         })
-
         return () => {
             return unsubscribe;
         }
