@@ -50,6 +50,7 @@ const Testimonials = () => {
 
                     >
                         <div className='m-24 flex flex-col items-center my-16 mx-24'>
+                            
                             <Rating
                                 style={{ maxWidth: 180 }}
                                 value={review.rating}

@@ -32,7 +32,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://food-owala-server.vercel.app/users', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'
@@ -126,7 +126,8 @@ const SignUp = () => {
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p><small> <Link to='/login'>Already Have an Account</Link></small></p>
+                        <p className='my-4 text-center'>Already Have an Account <Link to='/login' className='text-pink-600 font-bold'>Login</Link> </p>
+                        
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>

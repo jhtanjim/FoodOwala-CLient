@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaDoorClosed, FaDoorOpen, FaShoppingCart, FaUser } from 'react-icons/fa';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
@@ -23,41 +23,44 @@ console.log(cart?.length);
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order'>Order food</Link></li>
-        <li><Link to='/dashboard/mycart'>
-            <button className="btn gap-2">
-                <FaShoppingCart></FaShoppingCart>
-                <div className="badge badge-outline">+{cart?.length || 0}</div>
-            </button>
-        </Link></li>
+       
         {
             user ? <>
-                <button onClick={handleLogOut} className="btn  btn-ghost">logout</button>
+                <Link onClick={handleLogOut} className="btn  btn-sm btn-ghost"><FaDoorClosed/> logout</Link>
             </> :
                 <>
-                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/login'><FaUser/> Login</Link></li>
                 </>
         }
     </>
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-60 bg-black text-white font-bold ">
+            <div className="navbar fixed z-10  bg-opacity-60 bg-black text-white font-bold ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black">
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">KhabarDokan</a>
+                    <a className="btn btn-ghost normal-case lg:text-xl">KhabarDokan</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navOptions}
                     </ul>
+                    
                 </div>
                 <div className="navbar-end">
+                <Link to='/dashboard/mycart'>
+            <button className="btn btn-sm gap-2">
+                <FaShoppingCart></FaShoppingCart>
+                <div className="badge badge-outline">+{cart?.length || 0}</div>
+            </button>
+        </Link>
+               
                 {user && (
                         <OverlayTrigger
                             placement="bottom"
@@ -65,15 +68,15 @@ console.log(cart?.length);
                         >
                             <div style={{ position: 'relative', zIndex: '9999' }}>
                                 <img
-                                    className="rounded-full mr-5"
+                                    className="rounded-full mr-5 ms-3"
                                     src={user.photoURL}
                                     alt="Profile Picture"
                                     style={{ width: '60px', height: '60px' }}
                                 />
                             </div>
                         </OverlayTrigger>
-                    )}                </div>
-            </div>
+                    )}   </div>             </div>
+          
         </>
     );
 };

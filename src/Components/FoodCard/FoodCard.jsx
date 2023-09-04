@@ -17,7 +17,7 @@ const FoodCard = ({ item }) => {
         if (user && user.email) {
             const cartItem = { menuItemId: _id, name, image, price, email: user.email }
             console.log(cartItem);
-            fetch('http://localhost:5000/carts', {
+            fetch('https://food-owala-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -58,7 +58,7 @@ const FoodCard = ({ item }) => {
         <div className="">
             <div className="card  lg:w-96 bg-base-100 shadow-xl">
                 <figure><img className='h-40 mt-4' src={image} alt="Shoes" /></figure>
-                <p className=' absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white '>{price}</p>
+                <p className=' absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white '>TK {price}</p>
                 <div className="card-body flex-col items-center">
                     <p>{category}</p>
                     <h2 className="card-title ">{name}</h2>

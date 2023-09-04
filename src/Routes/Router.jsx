@@ -11,6 +11,12 @@ import AddItem from "../Pages/DashBoard/AddItem/AddItem";
 import PrivateRoutes from "./PrivateRoutes";
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 import ManageItem from "../Pages/DashBoard/ManageItem/ManageItem";
+import Payment from "../Pages/DashBoard/Payment/Payment/Payment";
+import CardPayment from "../Pages/DashBoard/Payment/CardPayment/CardPayment";
+import AdminRoute from "./AdminRoute";
+import UpdateItem from "../Pages/DashBoard/UpdateItem/UpdateItem";
+import Bkash from "../Pages/DashBoard/Payment/Payment/Bkash";
+import Nagad from "../Pages/DashBoard/Payment/Payment/Nagad";
 
 export const router = createBrowserRouter([
     {
@@ -46,22 +52,46 @@ export const router = createBrowserRouter([
         path: 'dashboard',
         element:<PrivateRoutes> <DashBoard></DashBoard></PrivateRoutes> ,
         children: [
+            // users
             {
                 path: 'mycart',
                 element: <MyCart></MyCart>
             },
             {
+                path: 'mycart/payment',
+                element: <Payment/>
+            },
+            {
+                path: 'mycart/payment/cardPayment',
+                element: <CardPayment/>
+            },
+            {
+                path: 'mycart/payment/bkash',
+                element: <Bkash></Bkash>
+            },
+            {
+                path: 'mycart/payment/nagad',
+                element: <Nagad></Nagad>
+            },
+
+            // admin
+            {
                 path: 'allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path: 'addItem',
-                element: <AddItem></AddItem>
+                element: <AdminRoute><AddItem></AddItem></AdminRoute>
             },
             {
                 path: 'manageItems',
-                element: <ManageItem></ManageItem>
-            }
+                element: <AdminRoute><ManageItem></ManageItem></AdminRoute>
+            },
+            {
+                path: 'manageItems/updateItems/:id',
+                element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>
+            },
+           
         ]
     }
 ]);

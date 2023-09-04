@@ -1,42 +1,44 @@
 import React from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useMenu from "../../../Hooks/useMenu";
+import { Link } from "react-router-dom";
 
 const ManageItemCard = ({ item }) => {
-    const [menu]=useMenu()
+  
   const { name, image, price } = item;
   // delete
-  const handleDelete = item => {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`http://localhost:5000/menu/${item._id}`, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        )
+const handleDelete = item => {
+  Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+      if (result.isConfirmed) {
+          fetch(`https://food-owala-server.vercel.app/menu/${item._id}`, {
+              method: "DELETE"
+          })
+              .then(res => res.json())
+              .then(data => {
+                  if (data.deletedCount > 0) {
+                      refetch()
+                      Swal.fire(
+                          'Deleted!',
+                          'Your file has been deleted.',
+                          'success'
+                      )
 
 
-                    }
-                })
-        }
-    })
+                  }
+              })
+      }
+  })
 
 }
+
   return (
     
     <div className="w-full max-w-6xl my-8">
@@ -62,14 +64,17 @@ const ManageItemCard = ({ item }) => {
                 </div>
               </td>
               <td>{name}</td>
-              <td>${price}</td>
+              <td>TK {price}</td>
               <td>
+                <Link to={`updateItems/${item._id}`}> 
                 <button
-                  onClick={() => handleUpdate(item)}
-                  className="btn btn-ghost bg-yellow-900 text-white"
-                >
-                  <FaEdit />
-                </button>
+                 
+                 className="btn btn-ghost bg-yellow-900 text-white"
+               >
+                 <FaEdit />
+               </button>
+                </Link>
+               
                 
               </td>
               <td>

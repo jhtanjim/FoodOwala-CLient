@@ -6,7 +6,7 @@ import useAdmin from '../Hooks/useAdmin';
 
 const DashBoard = () => {
     const [cart] = useCarts()
-    const isAdmin =useAdmin()
+    const [isAdmin] =useAdmin()
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -29,7 +29,13 @@ const DashBoard = () => {
                                     <li><NavLink to='manageItems'><FaWallet /> Manage Items</NavLink></li>
                                     <li><NavLink to='dashboard/history'><FaBook /> Manage Bookings</NavLink></li>
                                     <li><NavLink to='allusers'><FaUsers /> All Users</NavLink></li>
+                                    <li><NavLink to='dashboard/reservations'><FaCalendarAlt />Reservations  </NavLink></li>
+                                    <li><NavLink to='dashboard/history'><FaWallet /> Payment History</NavLink></li>
+                                    <li className=''>
+                                        <NavLink to='mycart'><FaShoppingCart />My Cart
+                                            <span className="badge  badge-secondary">+{cart?.length || 0}</span>
 
+                                        </NavLink></li>
 
 
 

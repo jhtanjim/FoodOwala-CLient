@@ -1,0 +1,44 @@
+[
+    {
+        "name": "JH Tanjim",
+        "id": 1,
+        "image": "https://i.ibb.co/tBtWY6K/336536273-620458166790507-2988363118309037949-n.jpg",
+        "ig":"https://www.instagram.com/jhtanjim/",
+        "fb":"https://www.facebook.com/Jawad.Tanjim.16/"
+    },
+    {
+        "name": "Moshiur Rahman",
+        "id": 2,
+        "image": "https://i.ibb.co/hg9tNwt/372346028-694739905835849-8068775294734187666-n.jpg",
+        "ig":"https://www.instagram.com/abid_moshiur_/",
+        "fb":"https://www.facebook.com/abid.moshihur"
+    },
+    {
+        "name": "Brinda Dhar",
+        "id": 3,
+        "image": "https://i.ibb.co/VxKTWp1/371509001-1485371122249280-5046050538748525905-n.jpg",
+        "ig":"https://www.instagram.com/_._brindha/",
+        "fb":"https://www.facebook.com/brindha.dhar.50"
+    },
+    {
+        "name": "Md. Rezuwan Bin Yousuf",
+        "id": 4,
+        "image": "https://i.ibb.co/Z87LthH/IMG-7861.jpg",
+        "ig":"https://www.instagram.com/rizwanbin_yousuf/",
+        "fb":"https://www.facebook.com"
+    },
+    {
+        "name": "Ruksat Rahman",
+        "id": 5,
+        "image": "https://i.ibb.co/686BM6N/Whats-App-Image-2023-09-03-at-10-02-51-PM.jpg",
+        "ig":"https://www.instagram.com/rukshat_rahman_/",
+        "fb":"https://www.facebook.com/rukshat.rahman"
+    },
+    {
+        "name": "Rimon Dhar",
+        "id": 6,
+        "image": "https://i.ibb.co/nR932tv/1667999396690-01.jpg",
+        "ig":"https://www.instagram.com/rimon_dhar999/",
+        "fb":"https://www.facebook.com/profile.php?id=100008590062522"
+    }
+]

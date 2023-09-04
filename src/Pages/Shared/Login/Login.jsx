@@ -57,7 +57,7 @@ const Login = () => {
 
 
             <div>
-                <div className="hero min-h-screen bg-base-200">
+                <div className="hero min-h-screen bg-base-200 ">
                     <div className="hero-content flex-col lg:flex-row">
                         <div className="text-center md:w-1/2 lg:text-left">
                             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -88,7 +88,7 @@ const Login = () => {
 
                                 </div>
                             </form>
-                            <p><small>New Here? <Link to='/signUp'>Create a New Account</Link></small></p>
+                            <p className='my-4 text-center'>New to KhabarDokan <Link to='/signup' className='text-pink-600 font-bold'>Sign Up</Link> </p>
                             <SocialLogin></SocialLogin>
                         </div>
                     </div>
